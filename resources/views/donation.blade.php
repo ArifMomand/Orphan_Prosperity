@@ -73,10 +73,12 @@
         'choose'  => __('Choose an amount above.'),
         'custom'  => __('A gift of $:amount, sized by you and put to use where it is needed.'),
         'impacts' => [
-            25  => __('Covers a week of meals and a set of school supplies for one child.'),
-            50  => __('Provides a full month of meals and basic school supplies for one child.'),
-            100 => __('Extends full care (meals, supplies and health checkups) to three children.'),
-            500 => __('Funds a community initiative: a classroom repair, a clean-water point, or a term of tuition for a home.'),
+            8  => __('School Fee.'),
+            15  => __('uniform .'),
+            25 => __('Fees, Courses, lunches.'),
+            30 => __('Books And Stationery.'),
+            70 => __('School Fee, Books, Stationery, Uniforms.'),
+            100 => __('School Fee, Books, Stationery, Uniforms, Lunches.'),
         ],
     ];
 @endphp
@@ -149,25 +151,25 @@
                         </div>
                     @endif
 
-                    {{-- Frequency --}}
+                    <!-- {{-- Frequency --}}
                     <div class="flex items-center justify-between gap-3 mb-4">
                         <h2 class="font-bold text-gray-900">{{ __('Choose your gift') }}</h2>
                         <div class="inline-flex bg-gray-100 rounded-full p-1 text-sm font-semibold">
                             <button type="button" id="freqMonthly" class="freq-btn active px-4 py-1.5 rounded-full text-gray-500 transition">{{ __('Monthly') }}</button>
                             <button type="button" id="freqOnce" class="freq-btn px-4 py-1.5 rounded-full text-gray-500 transition">{{ __('One-time') }}</button>
                         </div>
-                    </div>
+                    </div> -->
 
-                    {{-- Amount chips --}}
+                    <!-- {{-- Amount chips --}}
                     <div class="grid grid-cols-4 gap-2">
-                        @foreach ([25, 50, 100, 500] as $amt)
+                        @foreach ([8, 15, 25, 30, 70, 100] as $amt)
                             <button type="button"
                                     class="amt-chip {{ $amt === 50 ? 'active' : '' }} rounded-xl border border-gray-200 py-3 text-base font-bold text-gray-800 hover:border-blue-400 transition"
                                     data-amount="{{ $amt }}"><span dir="ltr">${{ $amt }}</span></button>
                         @endforeach
-                    </div>
+                    </div> -->
 
-                    <div class="mt-2 flex items-center gap-2 rounded-xl border border-dashed border-gray-300 px-4 py-2.5 focus-within:border-blue-500 transition">
+                    <!-- <div class="mt-2 flex items-center gap-2 rounded-xl border border-dashed border-gray-300 px-4 py-2.5 focus-within:border-blue-500 transition">
                         <span class="text-sm text-gray-500 shrink-0">{{ __('Other amount $') }}</span>
                         <input type="number" min="1" id="customAmount" placeholder="75"
                                class="w-full bg-transparent border-0 focus:outline-none font-bold text-gray-900">
@@ -184,16 +186,11 @@
                             </div>
                             <p class="text-gray-600" id="impactLine">{{ __('Provides a full month of meals and basic school supplies for one child.') }}</p>
                         </div>
-                    </div>
+                    </div> -->
 
                     {{-- Donorbox --}}
                     <div class="mt-4 rounded-2xl border border-gray-200 overflow-hidden">
-                        <script src="https://donorbox.org/widget.js" paypalexpress="false"></script>
-                        <iframe id="donorboxFrame" src="{{ $donorboxSrc }}" name="donorbox"
-                                allowpaymentrequest="allowpaymentrequest" seamless="seamless" frameborder="0" scrolling="no"
-                                height="900px" width="100%"
-                                style="max-width:100%;min-width:250px;max-height:none!important" allow="payment"></iframe>
-                    </div>
+<script type="module" src="https://donorbox.org/widgets.js" async></script><dbox-widget campaign="orphans_prosperity" type="donation_form" enable-auto-scroll="true"></dbox-widget>                    </div>
 
                     <div class="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-gray-500">
                         <span class="flex items-center gap-1.5">

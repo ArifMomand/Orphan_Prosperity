@@ -45,22 +45,7 @@
             </ul>
         </div>
 
-        @if ($showGallery)
-            <div>
-                <h4 class="text-white font-semibold mb-3">{{ __('Gallery') }}</h4>
-                <div class="grid grid-cols-3 gap-2">
-                    @for ($i = 1; $i <= 6; $i++)
-                        <img src="https://picsum.photos/seed/footer-gallery-{{ $i }}/100/100"
-                             alt="Gallery thumb {{ $i }}" class="w-full h-14 object-cover rounded">
-                    @endfor
-                </div>
-            </div>
-        @elseif ($showGive)
-            <div>
-                <h4 class="text-white font-semibold mb-3">{{ __('Give') }}</h4>
-                <a href="#checkout" class="inline-block bg-blue-600 hover:bg-blue-700 transition text-white text-sm font-semibold px-5 py-2.5 rounded-full">{{ __('Donate now') }}</a>
-            </div>
-        @endif
+       
     </div>
 
     <div class="max-w-7xl mx-auto px-6 mt-12 pt-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
